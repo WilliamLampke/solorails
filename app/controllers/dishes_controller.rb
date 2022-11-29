@@ -1,6 +1,10 @@
 class DishesController < ApplicationController
   def index
-    @dishes = Dish.all
+    if params[:restaurant_id].nil?
+      @dishes = Dish.all
+    else
+      @dishes = Dish.where(restaurant_id: params[:restaurant_id])
+    end
   end
 
   def show
