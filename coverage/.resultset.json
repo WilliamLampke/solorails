@@ -256,6 +256,36 @@
           null
         ]
       },
+      "/Users/william/mod2/food/spec/features/dishes/show_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/william/mod2/food/app/models/restaurant.rb": {
         "lines": [
           1,
@@ -283,6 +313,10 @@
           1,
           1,
           null,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -293,6 +327,6 @@
         ]
       }
     },
-    "timestamp": 1669740669
+    "timestamp": 1669741302
   }
 }
