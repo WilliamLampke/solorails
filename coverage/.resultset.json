@@ -260,7 +260,7 @@
           1,
           1,
           1,
-          2,
+          0,
           null,
           null
         ]
@@ -283,10 +283,10 @@
         "lines": [
           1,
           1,
-          2,
+          0,
           null,
           1,
-          0,
+          2,
           null,
           null
         ]
@@ -296,8 +296,25 @@
           1,
           null
         ]
+      },
+      "/Users/william/mod2/food/app/controllers/dishes_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          0,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1669746363
+    "timestamp": 1669746731
   }
 }

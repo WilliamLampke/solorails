@@ -42,5 +42,9 @@ RSpec.describe 'Restaurant show' do
     expect(page).to_not have_content(@dish4.price)
     expect(page).to_not have_content(@dish4.restaurant_id)
     end
+    it 'shows count of dishes belonging to it' do
+      visit "/restaurants/#{@restaurant1.id}"
+      expect(page).to have_content('Dish Count: 3')
+    end
   end
 end
