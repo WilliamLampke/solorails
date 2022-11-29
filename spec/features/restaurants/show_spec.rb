@@ -46,5 +46,11 @@ RSpec.describe 'Restaurant show' do
       visit "/restaurants/#{@restaurant1.id}"
       expect(page).to have_content('Dish Count: 3')
     end
+    it 'has a link to all dishes for the restaurant' do
+      visit "/restaurants/#{@restaurant1.id}"
+      expect(page).to have_link("Dishes by this restaurant")
+      click_on "Dishes by this restaurant"
+      expect(page).to have_content('Dish Index')
+    end
   end
 end
