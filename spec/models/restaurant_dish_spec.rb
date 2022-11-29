@@ -1,6 +1,9 @@
 require 'rails_helper'
-
-RSpec.describe 'dishes index' do 
+RSpec.describe RestaurantDish, type: :model do
+  describe 'relationships' do
+    it { should belong_to :dish }
+    it { should belong_to :restaurant }
+  end
   before :each do
     @restaurant1 = Restaurant.create!(name: 'bobs', open: true, rating: 9)
     @restaurant2 = Restaurant.create!(name: 'krustys', open: true, rating: 1)
@@ -17,28 +20,9 @@ RSpec.describe 'dishes index' do
 
     @rd4 = RestaurantDish.create!(restaurant_id: @restaurant2.id, dish_id: @dish4.id)
   end
-  describe 'index' do
-    it 'shows all dishes and their attributes' do
-      visit '/dishes'
-      expect(page).to have_content(@dish1.name)
-      expect(page).to have_content(@dish1.available)
-      expect(page).to have_content(@dish1.price)
-      expect(page).to have_content(@dish1.restaurant_id)
-
-      expect(page).to have_content(@dish2.name)
-      expect(page).to have_content(@dish2.available)
-      expect(page).to have_content(@dish2.price)
-      expect(page).to have_content(@dish2.restaurant_id)
-
-      expect(page).to have_content(@dish3.name)
-      expect(page).to have_content(@dish3.available)
-      expect(page).to have_content(@dish3.price)
-      expect(page).to have_content(@dish3.restaurant_id)
-
-      expect(page).to have_content(@dish4.name)
-      expect(page).to have_content(@dish4.available)
-      expect(page).to have_content(@dish4.price)
-      expect(page).to have_content(@dish4.restaurant_id)
+  describe 'same_id' do
+    it 'finds all with the same id' do
+        expect(RestaurantDish.same_id(@restaurant1.id)).to eq([@rd1, @rd2, @rd3])
     end
   end
 end

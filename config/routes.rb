@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :restaurants, only: [:index, :show] do
-    resources :dishes, only: [:index]
+    resources :restaurant_dishes, only: [:index]
   end
   get '/', to: 'welcome#index'
 

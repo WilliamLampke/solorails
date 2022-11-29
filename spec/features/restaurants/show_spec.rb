@@ -10,6 +10,12 @@ RSpec.describe 'Restaurant show' do
     @dish3 = Dish.create!(name: 'mcrib', available: false, price: 4, restaurant_id: @restaurant1.id)
 
     @dish4 = Dish.create!(name: 'krusty burger', available: true, price: 13, restaurant_id: @restaurant2.id)
+
+    @rd1 = RestaurantDish.create!(restaurant_id: @restaurant1.id, dish_id: @dish1.id)
+    @rd2 = RestaurantDish.create!(restaurant_id: @restaurant1.id, dish_id: @dish2.id)
+    @rd3 = RestaurantDish.create!(restaurant_id: @restaurant1.id, dish_id: @dish3.id)
+
+    @rd4 = RestaurantDish.create!(restaurant_id: @restaurant2.id, dish_id: @dish4.id)
   end
   describe 'show' do
     it 'shows all elements of a restaurant on its show page' do
@@ -22,7 +28,7 @@ RSpec.describe 'Restaurant show' do
 
     end
     it 'shows all dishes that belong to a restaurant' do
-    visit "/restaurants/#{@restaurant1.id}/dishes"
+    visit "/restaurants/#{@restaurant1.id}/restaurant_dishes"
     expect(page).to have_content(@dish1.name)
     expect(page).to have_content(@dish1.available)
     expect(page).to have_content(@dish1.price)
@@ -45,12 +51,6 @@ RSpec.describe 'Restaurant show' do
     it 'shows count of dishes belonging to it' do
       visit "/restaurants/#{@restaurant1.id}"
       expect(page).to have_content('Dish Count: 3')
-    end
-    it 'has a link to all dishes for the restaurant' do
-      visit "/restaurants/#{@restaurant1.id}"
-      expect(page).to have_link("Dishes by this restaurant")
-      click_on "Dishes by this restaurant"
-      expect(page).to have_content('Dish Index')
     end
   end
 end

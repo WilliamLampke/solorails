@@ -1,0 +1,8 @@
+<h1>Dishes from this Restaurant: </h1>
+<% @restaurant_dishes.each do |restaurant_dish|%>
+    <p><%= restaurant_dish.dish.name %></p>
+    <p><%= restaurant_dish.dish.available %></p>
+    <p><%= restaurant_dish.dish.price %></p>
+    <p><%= restaurant_dish.dish.restaurant_id %></p>
+
+<% end %>

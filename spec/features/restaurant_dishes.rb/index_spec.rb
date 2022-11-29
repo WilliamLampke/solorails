@@ -1,6 +1,5 @@
 require 'rails_helper'
-
-RSpec.describe 'dishes index' do 
+RSpec.describe 'RestaurantDish index' do
   before :each do
     @restaurant1 = Restaurant.create!(name: 'bobs', open: true, rating: 9)
     @restaurant2 = Restaurant.create!(name: 'krustys', open: true, rating: 1)
@@ -18,27 +17,13 @@ RSpec.describe 'dishes index' do
     @rd4 = RestaurantDish.create!(restaurant_id: @restaurant2.id, dish_id: @dish4.id)
   end
   describe 'index' do
-    it 'shows all dishes and their attributes' do
-      visit '/dishes'
-      expect(page).to have_content(@dish1.name)
-      expect(page).to have_content(@dish1.available)
-      expect(page).to have_content(@dish1.price)
-      expect(page).to have_content(@dish1.restaurant_id)
+    it 'has a link to the index on the restaurant show page' do 
 
-      expect(page).to have_content(@dish2.name)
-      expect(page).to have_content(@dish2.available)
-      expect(page).to have_content(@dish2.price)
-      expect(page).to have_content(@dish2.restaurant_id)
-
-      expect(page).to have_content(@dish3.name)
-      expect(page).to have_content(@dish3.available)
-      expect(page).to have_content(@dish3.price)
-      expect(page).to have_content(@dish3.restaurant_id)
-
-      expect(page).to have_content(@dish4.name)
-      expect(page).to have_content(@dish4.available)
-      expect(page).to have_content(@dish4.price)
-      expect(page).to have_content(@dish4.restaurant_id)
+        visit "/restaurants/#{@restaurant1.id}"
+        expect(page).to have_link("Dishes by this restaurant")
+        click_on "Dishes by this restaurant"
+        expect(page).to have_content('Dishes from this Restaurant')
+        expect(page).to_not have_content(@dish4.name)
     end
   end
 end
