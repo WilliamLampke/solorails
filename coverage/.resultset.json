@@ -242,6 +242,9 @@
         "lines": [
           1,
           null,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -251,7 +254,7 @@
           null
         ]
       },
-      "/Users/william/mod2/food/app/models/dish.rb": {
+      "/Users/william/mod2/food/app/models/restaurant.rb": {
         "lines": [
           1,
           1,
@@ -265,25 +268,29 @@
           null
         ]
       },
-      "/Users/william/mod2/food/spec/models/restaurant_spec.rb": {
+      "/Users/william/mod2/food/app/models/dish.rb": {
         "lines": [
           1,
-          null,
+          1,
+          null
+        ]
+      },
+      "/Users/william/mod2/food/app/controllers/restaurants_controller.rb": {
+        "lines": [
           1,
           1,
-          2,
+          1,
           null,
           null
         ]
       },
-      "/Users/william/mod2/food/app/models/restaurant.rb": {
+      "/Users/william/mod2/food/app/controllers/application_controller.rb": {
         "lines": [
-          1,
           1,
           null
         ]
       }
     },
-    "timestamp": 1669736075
+    "timestamp": 1669738262
   }
 }
