@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Restaurant Index' do
+RSpec.describe 'Restaurant show' do 
   before :each do
     @restaurant1 = Restaurant.create!(name: 'bobs', open: true, rating: 9)
     @restaurant2 = Restaurant.create!(name: 'krustys', open: true, rating: 1)

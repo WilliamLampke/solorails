@@ -1,0 +1,9 @@
+<h1> Dish Index </h1>
+
+<% @dishes.each do |dish|%>
+    <p><%= dish.name %></p>
+    <p><%= dish.available %></p>
+    <p><%= dish.price %></p>
+    <p><%= dish.restaurant.id %></p>
+    <br>
+<% end %>
