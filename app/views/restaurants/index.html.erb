@@ -1,5 +1,6 @@
 <h1> Restaurant Index </h1>
-
+<%= link_to "New Restaurant", "/restaurants/new"%>
+<br>
 <% @restaurants.each do |restaurant|%>
     <p><%= restaurant.name %></p>
     <p><%= restaurant.created_at %></p>

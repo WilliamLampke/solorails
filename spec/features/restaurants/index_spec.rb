@@ -30,5 +30,19 @@ RSpec.describe 'Restaurant Index' do
       expect(page).to have_content('2022-11-27 18:04:58 UTC')
       expect(page).to have_content('2022-11-28 18:04:58 UTC')
     end
+    it 'has a link to make a new restaurant' do
+      visit '/restaurants'
+      click_on "New Restaurant"
+      expect(page).to have_content('Name:')
+      expect(page).to have_content('Open:')
+      expect(page).to have_content('Rating:')
+      
+      fill_in :name, with: "Billys"
+      fill_in :open, with: "true"
+      fill_in :rating, with: "10"
+      click_on "Submit"
+      save_and_open_page
+      expect(page).to have_content("Billys")
+    end
   end
 end

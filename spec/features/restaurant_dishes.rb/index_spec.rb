@@ -25,5 +25,6 @@ RSpec.describe 'RestaurantDish index' do
         expect(page).to have_content('Dishes from this Restaurant')
         expect(page).to_not have_content(@dish4.name)
     end
+
   end
 end
