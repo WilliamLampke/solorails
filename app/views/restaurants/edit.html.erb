@@ -1,0 +1,10 @@
+
+<%= form_with url: "/restaurants/#{@restaurant.id}", method: :patch do |form|%>
+    <p><%= form.label :name, "Name: " %>
+    <%= form.text_field :name %></p>
+    <p><%= form.label :open, "Open: " %>
+    <%= form.text_field :open %></p>
+    <p><%= form.label :rating, "Rating: " %>
+    <%= form.text_field :rating %></p>
+    <%= form.submit "Update" %>
+<% end %>

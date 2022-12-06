@@ -1,4 +1,6 @@
 class Dish < ApplicationRecord
     belongs_to :restaurant
-    has_many :restaurant_dishes
+    def self.same_id(id)
+        where(restaurant_id: id)
+    end
 end

@@ -11,11 +11,6 @@ RSpec.describe 'Restaurant show' do
 
     @dish4 = Dish.create!(name: 'krusty burger', available: true, price: 13, restaurant_id: @restaurant2.id)
 
-    @rd1 = RestaurantDish.create!(restaurant_id: @restaurant1.id, dish_id: @dish1.id)
-    @rd2 = RestaurantDish.create!(restaurant_id: @restaurant1.id, dish_id: @dish2.id)
-    @rd3 = RestaurantDish.create!(restaurant_id: @restaurant1.id, dish_id: @dish3.id)
-
-    @rd4 = RestaurantDish.create!(restaurant_id: @restaurant2.id, dish_id: @dish4.id)
   end
   describe 'show' do
     it 'shows all elements of a restaurant on its show page' do
@@ -51,6 +46,23 @@ RSpec.describe 'Restaurant show' do
     it 'shows count of dishes belonging to it' do
       visit "/restaurants/#{@restaurant1.id}"
       expect(page).to have_content('Dish Count: 3')
+    end
+    it 'has a edit function on the edit page' do
+      visit "/restaurants/#{@restaurant1.id}"
+      expect(page).to have_content('bobs')
+      click_on "Update Restaurant"
+      fill_in :name, with: "lennys"
+      fill_in :open, with: "true"
+      fill_in :rating, with: "10"
+
+      click_on "Update"
+      expect(page).to have_content('lennys')
+      expect(page).to have_content('true')
+      expect(page).to have_content('10')
+
+      save_and_open_page
+
+      
     end
   end
 end

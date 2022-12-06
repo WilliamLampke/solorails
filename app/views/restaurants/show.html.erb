@@ -1,6 +1,7 @@
 <h1>Restaurant <%=@restaurant.id%>
 <br>
 <%= link_to "Dishes by this restaurant", "/restaurants/#{@restaurant.id}/restaurant_dishes" %>
+<%= link_to "Update Restaurant", "/restaurants/#{@restaurant.id}/edit" %>
 <br>
 <p>Name: <%= @restaurant.name %> </p>
 <p>Open?: <%= @restaurant.open %></p>
