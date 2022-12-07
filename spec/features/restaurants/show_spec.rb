@@ -24,24 +24,15 @@ RSpec.describe 'Restaurant show' do
     end
     it 'shows all dishes that belong to a restaurant' do
     visit "/restaurants/#{@restaurant1.id}/restaurant_dishes"
+
     expect(page).to have_content(@dish1.name)
-    expect(page).to have_content(@dish1.available)
-    expect(page).to have_content(@dish1.price)
-    expect(page).to have_content(@dish1.restaurant_id)
 
     expect(page).to have_content(@dish2.name)
-    expect(page).to have_content(@dish2.available)
-    expect(page).to have_content(@dish2.price)
-    expect(page).to have_content(@dish2.restaurant_id)
 
     expect(page).to have_content(@dish3.name)
-    expect(page).to have_content(@dish3.available)
-    expect(page).to have_content(@dish3.price)
-    expect(page).to have_content(@dish3.restaurant_id)
 
     expect(page).to_not have_content(@dish4.name)
-    expect(page).to_not have_content(@dish4.price)
-    expect(page).to_not have_content(@dish4.restaurant_id)
+
     end
     it 'shows count of dishes belonging to it' do
       visit "/restaurants/#{@restaurant1.id}"
@@ -57,11 +48,14 @@ RSpec.describe 'Restaurant show' do
 
       click_on "Update"
       expect(page).to have_content('lennys')
-      expect(page).to have_content('true')
-      expect(page).to have_content('10')
 
-
-      
+    end
+    describe 'destroy' do
+      it 'has a delete button' do
+        visit "/restaurants/#{@restaurant1.id}"
+        click_on "Delete Restaurant"
+        expect(page).to_not have_content("bobs")
+      end
     end
   end
 end
