@@ -1,6 +1,6 @@
 class DishesController < ApplicationController
   def index
-      @dishes = Dish.all
+    @dishes = Dish.available_yes
   end
 
   def show

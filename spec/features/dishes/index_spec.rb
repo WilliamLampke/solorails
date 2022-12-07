@@ -11,11 +11,6 @@ RSpec.describe 'dishes index' do
 
     @dish4 = Dish.create!(name: 'krusty burger', available: true, price: 2, restaurant_id: @restaurant2.id)
 
-    @rd1 = RestaurantDish.create!(restaurant_id: @restaurant1.id, dish_id: @dish1.id)
-    @rd2 = RestaurantDish.create!(restaurant_id: @restaurant1.id, dish_id: @dish2.id)
-    @rd3 = RestaurantDish.create!(restaurant_id: @restaurant1.id, dish_id: @dish3.id)
-
-    @rd4 = RestaurantDish.create!(restaurant_id: @restaurant2.id, dish_id: @dish4.id)
   end
   describe 'index' do
     it 'shows all dishes and their attributes' do
@@ -30,15 +25,20 @@ RSpec.describe 'dishes index' do
       expect(page).to have_content(@dish2.price)
       expect(page).to have_content(@dish2.restaurant_id)
 
-      expect(page).to have_content(@dish3.name)
-      expect(page).to have_content(@dish3.available)
-      expect(page).to have_content(@dish3.price)
-      expect(page).to have_content(@dish3.restaurant_id)
-
       expect(page).to have_content(@dish4.name)
       expect(page).to have_content(@dish4.available)
       expect(page).to have_content(@dish4.price)
       expect(page).to have_content(@dish4.restaurant_id)
+    end
+  end
+  describe 'true only' do
+    it 'only shows true children' do
+      dish5 = Dish.create!(name: "False Burger", available: false, price: 100, restaurant_id: @restaurant1.id)
+      visit "/dishes"
+      expect(page).to_not have_content("False Burger")
+      expect(page).to_not have_content("100")
+
+      save_and_open_page
     end
   end
 end

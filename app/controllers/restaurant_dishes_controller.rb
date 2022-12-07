@@ -2,7 +2,6 @@ class RestaurantDishesController < ApplicationController
     def index 
         @restaurant = Restaurant.find(params[:restaurant_id])
         @dishes = Dish.same_id(params[:restaurant_id])
-        @dishes = @dishes.available_yes
     end
     def new
         @restaurant = Restaurant.find(params[:restaurant_id])
