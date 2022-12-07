@@ -9,4 +9,7 @@ class Dish < ApplicationRecord
     def self.alphabetical
         order(:name)
     end
+    def self.numbered(number)
+        where('dishes.price > ?', number)
+    end
 end

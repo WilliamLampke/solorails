@@ -1,8 +1,14 @@
 class RestaurantDishesController < ApplicationController
     def index 
         @restaurant = Restaurant.find(params[:restaurant_id])
-        @dishes = Dish.same_id(params[:restaurant_id])
-    end
+        
+        if params[:number] != nil
+          @dishes = Dish.same_id(params[:restaurant_id]).numbered((params[:number]).to_i)
+        else
+          @dishes = Dish.same_id(params[:restaurant_id])
+        end
+
+      end
     def new
         @restaurant = Restaurant.find(params[:restaurant_id])
 

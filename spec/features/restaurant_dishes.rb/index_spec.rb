@@ -48,9 +48,16 @@ RSpec.describe 'RestaurantDish index' do
     it 'adds a link to sort in aplhabetical order by name' do
       visit "/restaurants/#{@restaurant1.id}/restaurant_dishes"
       click_on "Sort Alphabetically"
-      save_and_open_page
       expect(@dish2.name).to appear_before(@dish1.name)
       expect(@dish1.name).to appear_before(@dish3.name)
+    end
+  end
+  describe 'sort by number' do
+    it 'has a form to sort by number' do 
+      visit "/restaurants/#{@restaurant1.id}/restaurant_dishes"
+      fill_in :number, with: 6
+      click_on "Submit"
+      expect(page).to have_content('deluxe')
     end
   end
 end
