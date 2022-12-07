@@ -20,5 +20,12 @@ RSpec.describe Dish, type: :model do
       expect(Dish.same_id(@restaurant1.id)).to eq([@dish1, @dish2, @dish3])
     end
   end
+  describe 'available_yes' do
+    it 'shows only true dishes' do
+      dish5 = Dish.create!(name: "False Burger", available: false, price: 100, restaurant_id: @restaurant1.id)
+      expext(Dish.available_yes).to eq([@dish1, @dish2, @dish3])
+      
+    end
+  end
 
 end

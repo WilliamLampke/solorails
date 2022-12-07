@@ -45,4 +45,14 @@ RSpec.describe 'RestaurantDish index' do
       expect(page).to have_content("2")
     end
   end
+  describe 'true only' do
+    it 'only shows true children' do
+      dish5 = Dish.create!(name: "False Burger", available: false, price: 100, restaurant_id: @restaurant1.id)
+      visit "/restaurants/#{@restaurant1.id}/restaurant_dishes"
+      expect(page).to_not have_content("False Burger")
+      expect(page).to_not have_content("100")
+
+      save_and_open_page
+    end
+  end
 end
