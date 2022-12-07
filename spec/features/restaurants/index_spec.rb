@@ -50,4 +50,11 @@ RSpec.describe 'Restaurant Index' do
       expect(page).to have_content("trents")
     end
   end
+  describe 'delete on each parent' do
+    it 'has a link to delete on each parent' do
+      visit "/restaurants" 
+      click_on "Destroy #{@restaurant2.id}"
+      expect(page).to_not have_content('krustys')
+    end
+  end
 end
