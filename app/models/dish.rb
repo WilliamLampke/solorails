@@ -6,4 +6,7 @@ class Dish < ApplicationRecord
     def self.available_yes
         where(available: true)
     end
+    def self.alphabetical
+        order(:name)
+    end
 end

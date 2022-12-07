@@ -6,4 +6,10 @@ class DishesController < ApplicationController
   def show
     @dish = Dish.find(params[:id])
   end
+  def edit 
+
+  end
+  def update 
+    binding.pry
+  end
 end

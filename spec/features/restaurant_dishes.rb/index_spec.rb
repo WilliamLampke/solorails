@@ -36,14 +36,21 @@ RSpec.describe 'RestaurantDish index' do
     it 'has a link to edit dish' do
       visit "/restaurants/#{@restaurant1.id}/restaurant_dishes"
       click_on "Edit Dish #{@dish1.id}" 
-      fill_in :name, with: "Pickles"
-      fill_in :available, with: "true"
-      fill_in :price, with: "2"
+      fill_in(:name, with: "Pickles")
+      fill_in(:available, with: "true")
+      fill_in(:price, with: "2")
       click_on "Update"
-      save_and_open_page
       expect(page).to have_content("Pickles")
       expect(page).to have_content("2")
     end
   end
-  
+  describe 'alphabetical' do
+    it 'adds a link to sort in aplhabetical order by name' do
+      visit "/restaurants/#{@restaurant1.id}/restaurant_dishes"
+      click_on "Sort Alphabetically"
+      save_and_open_page
+      expect(@dish2.name).to appear_before(@dish1.name)
+      expect(@dish1.name).to appear_before(@dish3.name)
+    end
+  end
 end

@@ -22,4 +22,7 @@ class RestaurantDishesController < ApplicationController
         @dish.update(name: params[:name], available: params[:available], price: params[:price])
         redirect_to "/dishes/#{@dish.id}" 
       end
+      def sort
+
+      end
 end

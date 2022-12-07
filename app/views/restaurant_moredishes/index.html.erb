@@ -1,6 +1,5 @@
 <h1>Dishes from this Restaurant: </h1>
 <%=link_to "Add Dish", "/restaurants/#{@restaurant.id}/restaurant_dishes/new", method: :get %>
-<%=link_to "Sort Alphabetically", "/restaurants/#{@restaurant.id}/restaurant_moredishes", method: :get %>
 
 <% @dishes.each do |dish|%>
     <p><%= dish.name %></p>
