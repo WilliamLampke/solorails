@@ -262,7 +262,7 @@
           1,
           1,
           1,
-          6,
+          0,
           null,
           null
         ]
@@ -282,7 +282,7 @@
           0,
           null,
           1,
-          0,
+          4,
           null,
           1,
           0,
@@ -290,31 +290,22 @@
           null
         ]
       },
-      "/Users/william/mod2/food/app/controllers/restaurants_controller.rb": {
+      "/Users/william/mod2/food/app/controllers/dishes_controller.rb": {
         "lines": [
           1,
           1,
-          6,
+          4,
           null,
           null,
           1,
           0,
           null,
-          null,
-          1,
-          null,
-          null,
           1,
           1,
-          1,
-          null,
           null,
           1,
           1,
           null,
-          null,
-          1,
-          1,
           1,
           1,
           null,
@@ -328,6 +319,6 @@
         ]
       }
     },
-    "timestamp": 1670399316
+    "timestamp": 1670400034
   }
 }

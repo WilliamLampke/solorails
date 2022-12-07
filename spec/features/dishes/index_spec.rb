@@ -38,7 +38,17 @@ RSpec.describe 'dishes index' do
       expect(page).to_not have_content("False Burger")
       expect(page).to_not have_content("100")
 
-      save_and_open_page
+    end
+  end
+  describe 'dish update' do
+    it 'has update links on the dishes index' do
+      visit "/dishes"
+      click_on "Update #{@dish1.id}"
+      fill_in :name, with: "Fake"
+      fill_in :available, with: "true"
+      fill_in :price, with: "25"
+      click_on "Update"
+      expect(page).to have_content("Fake")
     end
   end
 end

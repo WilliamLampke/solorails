@@ -1,0 +1,9 @@
+<%= form_with url: "/dishes/#{@dish.id}", method: :patch do |form|%>
+    <p><%= form.label :name, "Name: " %>
+    <%= form.text_field :name %></p>
+    <p><%= form.label :available, "Available: " %>
+    <%= form.text_field :available %></p>
+    <p><%= form.label :price, "Price: " %>
+    <%= form.text_field :price %></p>
+    <%= form.submit "Update" %>
+<% end %>

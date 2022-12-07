@@ -7,9 +7,12 @@ class DishesController < ApplicationController
     @dish = Dish.find(params[:id])
   end
   def edit 
-
+    @dish = Dish.find(params[:id])
   end
   def update 
-    binding.pry
+    @dish = Dish.find(params[:id])
+
+    @dish.update(name: params[:name], available: params[:available], price: params[:price])
+    redirect_to "/dishes" 
   end
 end
