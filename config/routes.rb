@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :restaurants, only: [:index, :show, :new, :create, :update, :edit, :destroy] do
-    resources :restaurant_dishes, only: [:index, :new, :create, :edit, :update, :sort]
+    resources :restaurant_dishes, only: [:index, :new, :create, :edit, :update, :sort, :destroy]
     resources :restaurant_moredishes, only: [:index]
   end
   get '/', to: 'welcome#index'

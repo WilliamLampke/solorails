@@ -60,4 +60,12 @@ RSpec.describe 'RestaurantDish index' do
       expect(page).to have_content('deluxe')
     end
   end
+  describe 'delete buttons' do
+    it 'has delete buttons for each dish' do
+      visit "/restaurants/#{@restaurant1.id}/restaurant_dishes"
+      click_on "Delete #{@dish2.id}"
+      expect(page).to_not have_content(@dish2.name)
+      save_and_open_page
+    end
+  end
 end

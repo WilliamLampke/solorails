@@ -31,4 +31,9 @@ class RestaurantDishesController < ApplicationController
       def sort
 
       end
+      def destroy
+        @restaurant = Restaurant.find(params[:restaurant_id])
+        Dish.destroy(params[:id])
+        redirect_to "/restaurants/#{@restaurant.id}/restaurant_dishes"
+      end
 end

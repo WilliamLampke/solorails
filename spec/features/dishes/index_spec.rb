@@ -51,4 +51,11 @@ RSpec.describe 'dishes index' do
       expect(page).to have_content("Fake")
     end
   end
+  describe 'delete buttons' do
+    it 'has delete buttons for each dish' do
+      visit "/dishes"
+      click_on "Delete #{@dish1.id}"
+      expect(page).to_not have_content(@dish1.name)
+    end
+  end
 end

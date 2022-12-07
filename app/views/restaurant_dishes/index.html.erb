@@ -13,5 +13,6 @@
     <p><%= dish.price %></p>
     <p><%= dish.restaurant_id %></p>
     <%=link_to "Edit Dish #{dish.id}", "/restaurants/#{@restaurant.id}/restaurant_dishes/#{dish.id}/edit", method: :get %>
+    <%=link_to "Delete #{dish.id}", "/restaurants/#{@restaurant.id}/restaurant_dishes/#{dish.id}", method: :delete %>
 
 <% end %>
