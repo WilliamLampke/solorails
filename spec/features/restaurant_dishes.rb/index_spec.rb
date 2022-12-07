@@ -9,22 +9,28 @@ RSpec.describe 'RestaurantDish index' do
     @dish3 = Dish.create!(name: 'mcrib', available: false, price: 4, restaurant_id: @restaurant1.id)
 
     @dish4 = Dish.create!(name: 'krusty burger', available: true, price: 2, restaurant_id: @restaurant2.id)
-
-    @rd1 = RestaurantDish.create!(restaurant_id: @restaurant1.id, dish_id: @dish1.id)
-    @rd2 = RestaurantDish.create!(restaurant_id: @restaurant1.id, dish_id: @dish2.id)
-    @rd3 = RestaurantDish.create!(restaurant_id: @restaurant1.id, dish_id: @dish3.id)
-
-    @rd4 = RestaurantDish.create!(restaurant_id: @restaurant2.id, dish_id: @dish4.id)
   end
   describe 'index' do
-    it 'has a link to the index on the restaurant show page' do 
-
-        visit "/restaurants/#{@restaurant1.id}"
-        expect(page).to have_link("Dishes by this restaurant")
-        click_on "Dishes by this restaurant"
-        expect(page).to have_content('Dishes from this Restaurant')
-        expect(page).to_not have_content(@dish4.name)
+    it 'has a link to the index on the restaurant show page' do
+      visit "/restaurants/#{@restaurant1.id}"
+      expect(page).to have_link('Dishes by this restaurant')
+      click_on 'Dishes by this restaurant'
+      expect(page).to have_content('Dishes from this Restaurant')
+      expect(page).to_not have_content(@dish4.name)
     end
+  end
+  describe 'new dish' do
+    it 'has a link to add a new dish' do
+      visit "/restaurants/#{@restaurant1.id}/restaurant_dishes"
+      click_on "Add Dish"
+      fill_in :name, with: "Potatos and Gravy"
+      fill_in :available, with: "true"
+      fill_in :price, with: "5"
+      click_on "Submit"
+      save_and_open_page
+      expect(page).to have_content("Potatos and Gravy")
+      expect(page).to have_content("5")
 
+    end
   end
 end

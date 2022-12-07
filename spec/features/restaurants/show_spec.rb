@@ -60,7 +60,6 @@ RSpec.describe 'Restaurant show' do
       expect(page).to have_content('true')
       expect(page).to have_content('10')
 
-      save_and_open_page
 
       
     end

@@ -1,4 +1,5 @@
 <h1>Dishes from this Restaurant: </h1>
+<%=link_to "Add Dish", "/restaurants/#{@restaurant.id}/restaurant_dishes/new", method: :get %>
 <% @dishes.each do |dish|%>
     <p><%= dish.name %></p>
     <p><%= dish.available %></p>
