@@ -27,10 +27,22 @@ RSpec.describe 'RestaurantDish index' do
       fill_in :available, with: "true"
       fill_in :price, with: "5"
       click_on "Submit"
-      save_and_open_page
       expect(page).to have_content("Potatos and Gravy")
       expect(page).to have_content("5")
 
+    end
+  end
+  describe 'edit dish' do
+    it 'has a link to edit dish' do
+      visit "/restaurants/#{@restaurant1.id}/restaurant_dishes"
+      click_on "Edit Dish #{@dish1.id}" 
+      fill_in :name, with: "Pickles"
+      fill_in :available, with: "true"
+      fill_in :price, with: "2"
+      click_on "Update"
+      save_and_open_page
+      expect(page).to have_content("Pickles")
+      expect(page).to have_content("2")
     end
   end
 end
