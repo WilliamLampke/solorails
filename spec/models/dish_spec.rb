@@ -29,7 +29,6 @@ RSpec.describe Dish, type: :model do
   end
   describe 'alphabetical' do
     it 'sorts alphabetically' do
-      binding.pry
       expect(Dish.alphabetical).to eq([@dish2, @dish4, @dish1, @dish3])
     end
   end
