@@ -8,7 +8,6 @@ class RestaurantsController < ApplicationController
   end
 
   def new
-    @restaurant = Restaurant.find(params[:id])
   end
 
   def create
@@ -23,6 +22,6 @@ class RestaurantsController < ApplicationController
   def update
     @restaurant = Restaurant.find(params[:id])
     @restaurant.update(name: params[:name], open: params[:open], rating: params[:rating])
-    redirect_to "/restaurants/#{@restaurant.id}/restaurant"
+    redirect_to "/restaurants/"
   end
 end

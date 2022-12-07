@@ -1,5 +1,5 @@
 
-<%= form_with url: "/restaurants/#{@restaurant.id}/dishes", method: :patch do |form|%>
+<%= form_with url: "/restaurants/#{@restaurant.id}", method: :patch do |form|%>
     <p><%= form.label :name, "Name: " %>
     <%= form.text_field :name %></p>
     <p><%= form.label :open, "Open: " %>

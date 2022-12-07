@@ -1,8 +1,9 @@
 <h1> Restaurant Index </h1>
-<%= link_to "New Restaurant", "/restaurants/new"%>
+<%= link_to "New Restaurant", "/restaurants/new", metheod: :get %>
 <br>
 <% @restaurants.each do |restaurant|%>
     <p><%= restaurant.name %></p>
     <p><%= restaurant.created_at %></p>
+    <%= link_to "Edit #{restaurant.id}", "/restaurants/#{restaurant.id}/edit", method: :get %>
 
 <% end %>

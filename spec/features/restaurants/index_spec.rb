@@ -36,8 +36,18 @@ RSpec.describe 'Restaurant Index' do
       fill_in :open, with: "true"
       fill_in :rating, with: "10"
       click_on "Submit"
-      save_and_open_page
       expect(page).to have_content("Billys")
+    end
+  end
+  describe 'parent edit button' do
+    it 'adds a edit button to every parent on the index' do
+      visit "/restaurants" 
+      click_on "Edit #{@restaurant2.id}"
+      fill_in :name, with: "trents"
+      fill_in :open, with: "true"
+      fill_in :rating, with: "1"
+      click_on "Update"
+      expect(page).to have_content("trents")
     end
   end
 end

@@ -262,7 +262,7 @@
           1,
           1,
           1,
-          0,
+          6,
           null,
           null
         ]
@@ -279,13 +279,13 @@
           1,
           1,
           1,
-          6,
+          0,
           null,
           1,
           0,
           null,
           1,
-          1,
+          0,
           null,
           null
         ]
@@ -294,11 +294,7 @@
         "lines": [
           1,
           1,
-          0,
-          null,
-          null,
-          1,
-          1,
+          6,
           null,
           null,
           1,
@@ -306,18 +302,21 @@
           null,
           null,
           1,
-          0,
-          0,
           null,
           null,
           1,
-          0,
+          1,
+          1,
           null,
           null,
           1,
-          0,
-          0,
-          0,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -327,69 +326,8 @@
           1,
           null
         ]
-      },
-      "/Users/william/mod2/food/app/controllers/restaurant_dishes_controller.rb": {
-        "lines": [
-          1,
-          1,
-          5,
-          5,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/william/mod2/food/app/controllers/dishes_controller.rb": {
-        "lines": [
-          1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/Users/william/mod2/food/app/controllers/restaurant_moredishes_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1670397575
+    "timestamp": 1670399316
   }
 }
