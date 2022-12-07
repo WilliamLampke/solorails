@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   end
   get '/', to: 'welcome#index'
 
-  resources :dishes, only: [:index, :show, :edit, :update]
+  resources :dishes, only: [:index, :show, :edit, :update, :destroy]
 end

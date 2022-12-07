@@ -11,11 +11,6 @@ RSpec.describe 'dishes show' do
 
     @dish4 = Dish.create!(name: 'krusty burger', available: true, price: 2, restaurant_id: @restaurant2.id)
 
-    @rd1 = RestaurantDish.create!(restaurant_id: @restaurant1.id, dish_id: @dish1.id)
-    @rd2 = RestaurantDish.create!(restaurant_id: @restaurant1.id, dish_id: @dish2.id)
-    @rd3 = RestaurantDish.create!(restaurant_id: @restaurant1.id, dish_id: @dish3.id)
-
-    @rd4 = RestaurantDish.create!(restaurant_id: @restaurant2.id, dish_id: @dish4.id)
   end
   describe 'show' do
     it 'shows an individual dish and attributes' do
@@ -26,6 +21,13 @@ RSpec.describe 'dishes show' do
       expect(page).to have_content(@dish1.available)
       expect(page).to have_content(@dish1.price)
       expect(page).to have_content(@dish1.restaurant_id)
+    end
+  end
+  describe 'destroy' do
+    it 'deletes a dish' do
+      visit "/dishes/#{@dish1.id}"
+      click_on "Delete Dish"
+      expect(page).to_not have_content(@dish1.name)
     end
   end
 end

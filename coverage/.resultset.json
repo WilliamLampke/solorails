@@ -262,7 +262,7 @@
           1,
           1,
           1,
-          2,
+          0,
           null,
           null
         ]
@@ -279,10 +279,10 @@
           1,
           1,
           1,
-          1,
+          0,
           null,
           1,
-          0,
+          1,
           null,
           1,
           0,
@@ -290,33 +290,24 @@
           null
         ]
       },
-      "/Users/william/mod2/food/app/controllers/restaurants_controller.rb": {
+      "/Users/william/mod2/food/app/controllers/dishes_controller.rb": {
         "lines": [
           1,
           1,
+          1,
+          null,
+          null,
+          1,
           2,
           null,
-          null,
           1,
-          4,
-          null,
-          null,
-          1,
-          null,
+          0,
           null,
           1,
           0,
+          null,
           0,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
+          0,
           null,
           1,
           1,
@@ -330,40 +321,8 @@
           1,
           null
         ]
-      },
-      "/Users/william/mod2/food/app/controllers/restaurant_dishes_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1670425870
+    "timestamp": 1670426256
   }
 }

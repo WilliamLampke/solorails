@@ -3,3 +3,4 @@
 <p>Available?: <%= @dish.available %></p>
 <p>Price: <%= @dish.price %></p>
 <p>Restaurant id: <%= @dish.restaurant_id %></p>
+<%= link_to "Delete Dish", "/dishes/#{@dish.id}", method: :delete %>

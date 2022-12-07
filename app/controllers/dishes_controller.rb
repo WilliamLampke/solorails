@@ -15,4 +15,8 @@ class DishesController < ApplicationController
     @dish.update(name: params[:name], available: params[:available], price: params[:price])
     redirect_to "/dishes" 
   end
+  def destroy
+    Dish.destroy(params[:id])
+    redirect_to "/dishes"
+    end
 end
